@@ -1,0 +1,38 @@
+// How to use? right click on file or folder of your workspace to add into .pawnignore
+// why to use? sometime, you don't want definition from all files, so use this file to ignore them.
+// if you are having problems, please report issue at https://github.com/oceanroleplay/pawn-community-tool/issues
+
+gamemodes/test_mode.amx
+.vscode
+pawno/include/a_actor.inc
+pawno/include/a_http.inc
+pawno/include/a_mysql.inc
+pawno/include/a_npc.inc
+pawno/include/a_objects.inc
+pawno/include/a_players.inc
+pawno/include/a_samp.inc
+pawno/include/a_sampdb.inc
+pawno/include/a_vehicles.inc
+pawno/include/core.inc
+pawno/include/datagram.inc
+pawno/include/distance.inc
+pawno/include/file.inc
+pawno/include/float.inc
+pawno/include/foreach.inc
+pawno/include/mdialog.inc
+pawno/include/mtimestamp.inc
+pawno/include/nex-ac_by.lang
+pawno/include/nex-ac_en.lang
+pawno/include/nex-ac_ru.lang
+pawno/include/nex-ac.inc
+pawno/include/Pawn.CMD.inc
+pawno/include/sscanf2.inc
+pawno/include/streamer.inc
+pawno/include/string.inc
+pawno/include/time.inc
+pawno/include/YSF.inc
+
+pawno/pawnc.dll
+pawno/pawnc.pdb
+pawno/pawncc.exe
+pawno/pawncc.pdb
