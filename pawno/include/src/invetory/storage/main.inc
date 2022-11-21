@@ -1,6 +1,9 @@
 forward OnStorageCreated(index, type_storage, name_storage[], subject_id, Float:x, Float:y, Float:z, &interiorid, &virtualworld, &Text3D:TextStorage);
 //Callback is called when creating a repository
-
+// interiorid, 
+// virtualworld, 
+// Text3D:TextStorage
+// Can be modified
 
 
 public OnPlayerClickTextDraw(playerid, Text:clickedid)

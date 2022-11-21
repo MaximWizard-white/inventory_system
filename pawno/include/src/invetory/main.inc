@@ -1,5 +1,5 @@
 
-forward OnPlayerClickInvSlot(&playerid, &index_item);	//Auto-callable function, when clicking on the slot
+forward OnPlayerClickInvSlot(playerid, index_item);	//Auto-callable function, when clicking on the slot
 
 //
 
@@ -811,17 +811,17 @@ stock GetNumberOfPages(playerid)
 
 
 	
-public OnPlayerClickInvSlot(&playerid, &index_item)
+public OnPlayerClickInvSlot(playerid, index_item)
 {
-	return WC_OnPlayerClickInvSlot(playerid, index_item);
+	return inv_OnPlayerClickInvSlot(playerid, index_item);
 }
 #if defined _ALS_OnPlayerClickInvSlot
 	#undef OnPlayerClickInvSlot
 #else
 	#define _ALS_OnPlayerClickInvSlot
 #endif
-#define OnPlayerClickInvSlot(%0) CHAIN_PUBLIC:WC_OnPlayerClickInvSlot(%0)
-CHAIN_FORWARD:WC_OnPlayerClickInvSlot(&playerid, &index_item) = 1;
+#define OnPlayerClickInvSlot(%0) CHAIN_PUBLIC:inv_OnPlayerClickInvSlot(%0)
+CHAIN_FORWARD:inv_OnPlayerClickInvSlot(playerid, index_item) = 1;
 
 
 
