@@ -192,7 +192,7 @@ stock ShowStorageForPlayer(playerid, index_storage)
 	CreateValueSlotStorageAll(playerid, index_storage);
 	if(storage_name[playerid] == PlayerText:INVALID_TEXT_DRAW)
 	{
-		storage_name[playerid] = CreatePlayerTextDraw(playerid, 488.3331, 151.1109, storage_info[index_storage][Storage_Name]); // название
+		storage_name[playerid] = CreatePlayerTextDraw(playerid, 488.3331, 151.1109, storage_info[index_storage][Storage_Name]); // 
 		PlayerTextDrawLetterSize(playerid, storage_name[playerid], 0.4000, 1.6000);
 		PlayerTextDrawAlignment(playerid, storage_name[playerid], 2);
 		PlayerTextDrawColor(playerid, storage_name[playerid], -1);
@@ -240,7 +240,7 @@ stock SwapInvetoryToStorage(playerid, index_storage, cell_inventory, cell_storag
 		
 		if(storage_PTD[playerid][cell_storage][E_Value] != PlayerText:INVALID_TEXT_DRAW)
 			PlayerTextDrawSetString(playerid, storage_PTD[playerid][cell_storage][E_Value], "_");
-		PlayerTextDrawSetPreviewModel(playerid, storage_PTD[playerid][cell_storage][E_Cell], 1649);//Дефолт 1649
+		PlayerTextDrawSetPreviewModel(playerid, storage_PTD[playerid][cell_storage][E_Cell], 1649);// 1649
 		PlayerTextDrawSetPreviewRot(playerid, storage_PTD[playerid][cell_storage][E_Cell], 0.0000, 0.0000, 0.0000, 0.0000);
 	}
 	PlayerTextDrawShow(playerid, storage_PTD[playerid][cell_storage][E_Cell]);
@@ -265,7 +265,7 @@ stock SwapInvetoryToStorage(playerid, index_storage, cell_inventory, cell_storag
 			if(invetory_PTD[playerid][index_old_TD][E_Value] != PlayerText:INVALID_TEXT_DRAW)
 				PlayerTextDrawSetString(playerid, invetory_PTD[playerid][index_old_TD][E_Value], "_");
 			PlayerTextDrawSetPreviewModel(playerid, invetory_PTD[playerid][index_old_TD][E_Cell], 1649);// 
-			PlayerTextDrawSetPreviewRot(playerid, invetory_PTD[playerid][index_old_TD][E_Cell], 0.0000, 0.0000, 0.0000, 0.0000);//Дефолт
+			PlayerTextDrawSetPreviewRot(playerid, invetory_PTD[playerid][index_old_TD][E_Cell], 0.0000, 0.0000, 0.0000, 0.0000);//
 		}
 		
 		PlayerTextDrawBackgroundColor(playerid, invetory_PTD[playerid][index_old_TD][E_Cell], 0x7F7F7FFF);
@@ -324,7 +324,7 @@ stock SwapSlotStorage(playerid, index_storage, cell, old_cell)
 	{
 		if(storage_PTD[playerid][old_cell][E_Cell] != PlayerText:INVALID_TEXT_DRAW)
 			PlayerTextDrawSetString(playerid, storage_PTD[playerid][old_cell][E_Value], "_");
-		PlayerTextDrawSetPreviewModel(playerid, storage_PTD[playerid][old_cell][E_Cell], 1649);//Дефолт 1649
+		PlayerTextDrawSetPreviewModel(playerid, storage_PTD[playerid][old_cell][E_Cell], 1649);// 1649
 		PlayerTextDrawSetPreviewRot(playerid, storage_PTD[playerid][old_cell][E_Cell], 0.0000, 0.0000, 0.0000, 0.0000);
 	}
 
