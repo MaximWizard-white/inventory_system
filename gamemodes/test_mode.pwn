@@ -7,7 +7,7 @@
 #include <a_samp>
 #include <Pawn.CMD>
 #include <sscanf2>
-#include <streamer>
+#include <streamer>//
 //
 #define FOREACH_I_PlayerVehiclesStream	
 #include <foreach>
