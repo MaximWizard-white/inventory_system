@@ -356,7 +356,7 @@ public OnGameModeInit()
 
 
 
-public OnPlayerClickInvSlot(&playerid, &index_item)
+public OnPlayerClickInvSlot(playerid, index_item)
 {
 	if(index_item == items[E_ITEMS_HELMET])
 	{
