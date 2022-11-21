@@ -2,7 +2,7 @@
 
 #if !defined IsValidVehicle
 	native IsValidVehicle(vehicleid);
-#endif
+#endif//
 
 #include <a_samp>
 #include <Pawn.CMD>
