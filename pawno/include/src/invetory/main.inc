@@ -1,19 +1,6 @@
 
 forward OnPlayerClickInvSlot(playerid, index_item);	//Auto-callable function, when clicking on the slot
 
-//
-
-#define CHAIN_FORWARD:%0_%2(%1)=%3; \
-	forward %0_%2(%1); \
-	public %0_%2(%1) <_ALS : _ALS_x0, _ALS : _ALS_x1> { return (%3); } \
-	public %0_%2(%1) <> { return (%3); }
-	
-#define CHAIN_PUBLIC:%0(%1) %0(%1) <_ALS : _ALS_go>
-
-
-
-
-//
 
 
 
@@ -94,7 +81,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 				}
 				//
 				#if defined STORAGE_System_Added//If the storage system is connected
-					if(GetPVarInt(playerid, "ClickStorage") && old_cell >= 0)//If something is already selected in the repository
+					if(GetPVarInt(playerid, "ClickStorage") && old_cell >= 0)//If something is already selected in the storage
 					{
 						//Making a vault swap to inventory
 						return SwapInvetoryToStorage(playerid,GetPVarInt(playerid, "IndexStorage"), now_cell, old_cell);
@@ -810,18 +797,22 @@ stock GetNumberOfPages(playerid)
 
 
 
-	
+
 public OnPlayerClickInvSlot(playerid, index_item)
 {
-	return inv_OnPlayerClickInvSlot(playerid, index_item);
+	#if defined inv_OnPlayerClickInvSlot
+		return inv_OnPlayerClickInvSlot(playerid, index_item);
+	#else
+		return 1;
+	#endif
 }
 #if defined _ALS_OnPlayerClickInvSlot
 	#undef OnPlayerClickInvSlot
 #else
 	#define _ALS_OnPlayerClickInvSlot
 #endif
-#define OnPlayerClickInvSlot(%0) CHAIN_PUBLIC:inv_OnPlayerClickInvSlot(%0)
-CHAIN_FORWARD:inv_OnPlayerClickInvSlot(playerid, index_item) = 1;
 
-
-
+#define OnPlayerClickInvSlot inv_OnPlayerClickInvSlot
+#if defined inv_OnPlayerClickInvSlot
+	forward inv_OnPlayerClickInvSlot(playerid, index_item);
+#endif

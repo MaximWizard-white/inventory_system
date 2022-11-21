@@ -1,5 +1,5 @@
 forward OnStorageCreated(index, type_storage, name_storage[], subject_id, Float:x, Float:y, Float:z, &interiorid, &virtualworld, &Text3D:TextStorage);
-//Callback is called when creating a repository
+//Callback is called when creating a storage
 // interiorid, 
 // virtualworld, 
 // Text3D:TextStorage
@@ -528,14 +528,30 @@ stock HideStorageForPlayer(playerid)
 
 
 
+
+
 public OnStorageCreated(index, type_storage, name_storage[], subject_id, Float:x, Float:y, Float:z, &interiorid, &virtualworld, &Text3D:TextStorage)
 {
-	return WC_OnStorageCreated(index, type_storage, name_storage, subject_id, x, y, z, interiorid, virtualworld, TextStorage);
+	
+	#if defined stg_OnStorageCreated
+		return stg_OnStorageCreated(index, type_storage, name_storage, subject_id, Float:x, Float:y, Float:z, interiorid, virtualworld, TextStorage);
+	#else
+		return 1;
+	#endif
 }
+
+
+
+
+
+
 #if defined _ALS_OnStorageCreated
 	#undef OnStorageCreated
 #else
 	#define _ALS_OnStorageCreated
 #endif
-#define OnStorageCreated(%0) CHAIN_PUBLIC:WC_OnStorageCreated(%0)
-CHAIN_FORWARD:WC_OnStorageCreated(index, type_storage, name_storage[], subject_id, Float:x, Float:y, Float:z, &interiorid, &virtualworld, &Text3D:TextStorage) = 1;
+
+#define OnStorageCreated stg_OnStorageCreated
+#if defined stg_OnStorageCreated
+	forward stg_OnStorageCreated(index, type_storage, name_storage[], subject_id, Float:x, Float:y, Float:z, &interiorid, &virtualworld, &Text3D:TextStorage);
+#endif
